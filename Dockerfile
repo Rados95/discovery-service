@@ -14,6 +14,6 @@ LABEL "author"="rados" \
 ENV APPDIR /usr/local/app
 RUN mkdir $APPDIR
 WORKDIR $APPDIR
-COPY --from=builder $APPDIR/target/discovery-service.jar $APPDIR
+COPY --from=discovery-builder $APPDIR/target/discovery-service.jar $APPDIR
 EXPOSE 8761
 CMD ["java", "-jar", "discovery-service.jar"]
