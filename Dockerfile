@@ -17,5 +17,7 @@ ENV APPDIR /usr/local/app
 RUN mkdir $APPDIR
 WORKDIR $APPDIR
 COPY --from=discovery-builder $APPDIR/target/discovery-service.jar $APPDIR
+RUN useradd -ms /bin/bash containermanager
+USER containermanager
 EXPOSE 8761
 CMD ["java", "-jar", "discovery-service.jar"]
