@@ -9,8 +9,8 @@ WORKDIR $APPDIR
 COPY . $APPDIR
 RUN mvn clean package
 
-# eclipse-temurin:8u345-b01-jre
-FROM eclipse-temurin@sha256:123447d83b8a6f17ca1eab76f8bcc31da08783a347f8f93740d01ea7264162bb
+# eclipse-temurin:18.0.2.1_1-jdk
+FROM eclipse-temurin@sha256:b58430116602b6ae7d6afa347138a7d74fad6629a0156d58e434e9881920f3ad
 LABEL "author"="rados" \
     "language"="java"
 ENV APPDIR /usr/local/app
